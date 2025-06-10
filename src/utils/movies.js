@@ -1,4 +1,4 @@
-const movies = [
+export const movies = [
   { id: 1, title: "The Departed", image: "https://image.tmdb.org/t/p/w500/49B1gF3Yy4vJ4y23mV1T0Z3JeD4.jpg" },
   { id: 2, title: "The Godfather", image: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" },
   { id: 3, title: "Lupin III: Cagliostro no Shiro", image: "https://image.tmdb.org/t/p/w500/5jGkyo0MAb5Hj8HwtiwMaAzdV7R.jpg" },

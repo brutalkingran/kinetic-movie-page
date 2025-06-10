@@ -1,8 +1,13 @@
-import React from 'react'
+import { movies } from "../utils/movies";
+import { MovieCard } from "./MovieCard";
 
-const MovieList = () => {
+const MovieList = ({ order }) => {
   return (
-    <div>MovieList</div>
+    <div>
+      { movies.map(( movie ) => (
+        <MovieCard key = {movie.id} movieTitle = {movie.title} movieImg = {movie.image} />
+      ))}
+    </div>
   )
 }
 

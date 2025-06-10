@@ -1,4 +1,4 @@
-
+import MovieList from "./MovieList"
 
 const Main = () => {
   return (
@@ -6,13 +6,15 @@ const Main = () => {
         <div>
             <h2>VISTOS RECIENTEMENTE</h2>
             {/* The Departed, Rocky, Urusei Yatsura: Beautiful Dreamer, The Godfather, Spider‑Man */}
+            <MovieList order="recent"/>
 
             <h2>PODRIAN INTERESARTE</h2>
-
             {/* Lupin III, The Ideon, End of Evangelion, 9 Reinas, Casino, Raging Bull, Spider‑Man 2 */}
+            <MovieList order="interested"/>
 
             <h2> Películas - Popular </h2>
             {/* Shawshank Redemption, Psycho, Rear Window, Godfather II, North by Northwest, Sonic 3, Goodfellas, Casino  */}
+            <MovieList order="moviesPopular"/>
         </div>
     </>
   )
