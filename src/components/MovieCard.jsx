@@ -1,18 +1,5 @@
-// TODO: ADD BUTTON ICONS
 import { useEffect, useState } from 'react'
-
-const addToWatchList = ( movie ) => {
-  setWatchlist([...watchlist, movie]);
-  localStorage.setItem("watchlist", JSON.stringify([...watchlist, movie]));
-  !buttonStateAdd
-}
-
-const removeFromWatchList = ( id ) => {
-  const updatedList = watchlist.filter( movie => movie.id !== id);
-  setWatchlist( updatedList );
-  localStorage.setItem("watchlist", JSON.stringify(updatedList));
-  !buttonStateAdd
-}
+import { AiTwotonePlayCircle, AiTwotonePlusCircle } from "react-icons/ai";
 
 const MovieCard = ( {id, movieTitle, movieImg} ) => {
   const [watchlist, setWatchlist] = useState([]);
@@ -23,6 +10,18 @@ const MovieCard = ( {id, movieTitle, movieImg} ) => {
     setWatchlist(savedWatchlist);
   }, []);
 
+  const addToWatchList = ( movie ) => {
+    setWatchlist([...watchlist, movie]);
+    localStorage.setItem("watchlist", JSON.stringify([...watchlist, movie]));
+    !buttonStateAdd
+  }
+  
+  const removeFromWatchList = ( id ) => {
+    const updatedList = watchlist.filter( movie => movie.id !== id);
+    setWatchlist( updatedList );
+    localStorage.setItem("watchlist", JSON.stringify(updatedList));
+    !buttonStateAdd
+  }
 
   return (
     <div key={id}>
@@ -33,14 +32,14 @@ const MovieCard = ( {id, movieTitle, movieImg} ) => {
       <p>{ movieTitle }</p>
 
       <button>
-        <img src="" alt="Play Movie" />
+        <AiTwotonePlayCircle/>
       </button>
 
-      <button onClick={buttonStateAdd ? addToWatchList(id) : removeFromWatchList(id)}>
-        <img src="" alt="Add to Watchlist" />
+      <button onClick={ () => buttonStateAdd ? addToWatchList(id) : removeFromWatchList(id) }>
+        <AiTwotonePlusCircle />
       </button>
     </div>
   )
 }
 
-export default MovieCard
+export default MovieCard;

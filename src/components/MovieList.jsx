@@ -1,5 +1,5 @@
-import { movies } from "../utils/movies";
-import { MovieCard } from "./MovieCard";
+import movies from "../api/movies.json";
+import MovieCard from "./MovieCard.jsx";
 
 const MovieList = ({ order }) => {
   return (
