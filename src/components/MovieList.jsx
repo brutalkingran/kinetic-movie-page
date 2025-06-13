@@ -5,7 +5,7 @@ const MovieList = ({ order }) => {
   return (
     <div>
       { movies.map(( movie ) => (
-        <MovieCard key = {movie.id} movieTitle = {movie.title} movieImg = {movie.image} />
+        <MovieCard key = { movie.id } movieData = { movie } />
       ))}
     </div>
   )

@@ -1,42 +1,45 @@
 import { useEffect, useState } from 'react'
-import { AiTwotonePlayCircle, AiTwotonePlusCircle } from "react-icons/ai";
+import { AiTwotonePlayCircle, AiTwotonePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
-const MovieCard = ( {id, movieTitle, movieImg} ) => {
-  const [watchlist, setWatchlist] = useState([]);
-  const buttonStateAdd = true;
+const MovieCard = ( { movieData } ) => {
+  const [watchlist, setWatchlist] = useState( [] );
+  const [buttonStateAdd, setbuttonStateAdd] = useState(true)
 
   useEffect(() => {
-    const savedWatchlist = JSON.parse(localStorage.getItem("watchlist"))
-    setWatchlist(savedWatchlist);
+    const savedWatchlist = JSON.parse(localStorage.getItem( "watchlist" ));
+    setWatchlist(savedWatchlist ? savedWatchlist : []);
   }, []);
 
   const addToWatchList = ( movie ) => {
     setWatchlist([...watchlist, movie]);
     localStorage.setItem("watchlist", JSON.stringify([...watchlist, movie]));
-    !buttonStateAdd
   }
   
   const removeFromWatchList = ( id ) => {
     const updatedList = watchlist.filter( movie => movie.id !== id);
     setWatchlist( updatedList );
     localStorage.setItem("watchlist", JSON.stringify(updatedList));
-    !buttonStateAdd
+  }
+
+  const handleButtonAddWatchlist = ( movieData ) => {
+    buttonStateAdd ? addToWatchList( movieData ) : removeFromWatchList( movieData );
+    setbuttonStateAdd(!buttonStateAdd);
   }
 
   return (
-    <div key={id}>
+    <div >
       <div>
-        <img src={movieImg} alt={movieTitle + " Portada"} />
+        <img src={ movieData.image } alt={ movieData.title + " Portada"} />
       </div>
 
-      <p>{ movieTitle }</p>
+      <p>{ movieData.title }</p>
 
       <button>
         <AiTwotonePlayCircle/>
       </button>
-
-      <button onClick={ () => buttonStateAdd ? addToWatchList(id) : removeFromWatchList(id) }>
-        <AiTwotonePlusCircle />
+      
+      <button className="cursor-pointer" onClick={ () => handleButtonAddWatchlist( movieData ) }>
+        { buttonStateAdd ? <AiTwotonePlusCircle /> : <AiOutlineMinusCircle/> }
       </button>
     </div>
   )
