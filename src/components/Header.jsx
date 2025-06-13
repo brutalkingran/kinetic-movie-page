@@ -8,30 +8,32 @@ const Header = () => {
 
   return (
     <>
-      <div className="right-0 left-0 bottom-0 fixed bg-black py-1 opacity-90 border-t-1 inset-shadow-sm ">
+      <div className="fixed bottom-0 left-0 right-0 bg-black py-1 opacity-90 border inset-shadow-sm z-50">
         <nav className="flex justify-around w-full">
-          {/* LOGO */}
-          {/* TODO: AÑADIR LOGO */}
+          <div>
+            {/* LOGO */}
+            {/* TODO: AÑADIR LOGO */}
 
-          {/* MENU HAMBURGUESA */}
-          <button className="hidden md:flex" onClick={() => setOpenMenu( !openMenu )}>
-            <AiOutlineMenu size={25}/>
-          </button>
+            {/* MENU HAMBURGUESA */}
+            <button className="hidden md:flex" onClick={() => setOpenMenu( !openMenu )}>
+              <AiOutlineMenu size={25}/>
+            </button>
+          </div>
 
           {/* BOTON INICIO */}
-          <button className="mx-10 text-white text-sm/6 flex flex-col items-center">
+          <button className="text-white text-sm flex flex-col items-center">
             <AiOutlineHome size={25}/>
             <p>Home</p>
           </button>
 
           {/* BOTON WATCHLIST */}
-          <button className="mx-10 text-white text-sm/6 flex flex-col items-center" onClick={() => setIsModalOpen(!isModalOpen)}>
+          <button className="text-white text-sm flex flex-col items-center" onClick={() => setIsModalOpen(!isModalOpen)}>
             <AiOutlinePlaySquare size={25} />
             <p>WatchList</p>
           </button>
 
           {/* BOTON CONFIG */}
-          <button className="mx-10 text-white text-sm/6 flex flex-col items-center">
+          <button className="text-white text-sm flex flex-col items-center">
             <AiOutlineSetting size={25}/>
             <p>Settings</p>
           </button>

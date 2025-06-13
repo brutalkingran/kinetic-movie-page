@@ -27,20 +27,26 @@ const MovieCard = ( { movieData } ) => {
   }
 
   return (
-    <div >
+    <div className='w-[300px] h-[300px] rounded-xl flex flex-col items-center p-2 bg-white shadow-md'>
       <div>
-        <img src={ movieData.image } alt={ movieData.title + " Portada"} />
+        <img
+          className='w-full h-full object-cover rounded-t-xl'
+          src={ movieData.image }
+          alt={ movieData.title + " Portada"} 
+        />
       </div>
 
       <p>{ movieData.title }</p>
 
-      <button>
-        <AiTwotonePlayCircle/>
-      </button>
-      
-      <button className="cursor-pointer" onClick={ () => handleButtonAddWatchlist( movieData ) }>
-        { buttonStateAdd ? <AiTwotonePlusCircle /> : <AiOutlineMinusCircle/> }
-      </button>
+      <div className='md:hidden  z-5 flex flex-col justify-center items-center opacity-75'>
+        <button className="cursor-pointer">
+          <AiTwotonePlayCircle size={32}/>
+        </button>
+        
+        <button className="cursor-pointer" onClick={ () => handleButtonAddWatchlist( movieData ) }>
+          { buttonStateAdd ? <AiTwotonePlusCircle size={32} /> : <AiOutlineMinusCircle size={32}/> }
+        </button>
+      </div>
     </div>
   )
 }
