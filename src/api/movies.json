@@ -1,22 +1,30 @@
-[
-  { "id": 1, "title": "The King of Comedy", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/3BM78deUfeZfShqPTblZuamgC8a.jpg" },
-  { "id": 2, "title": "The Godfather", "image": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" },
-  { "id": 3, "title": "Lupin III: Cagliostro no Shiro", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/mGfd4QCC1RCFdET5MihyW4Rfp1B.jpg" },
-  { "id": 4, "title": "Psycho", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/xFbnc2QPG5H5gYWsGbZT4q8Akya.jpg" },
-  { "id": 5, "title": "Rocky", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/8kEun6U9hTddM7NEfLLCGQKU2Mp.jpg" },
-  { "id": 6, "title": "The End of Evangelion", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/yBanOpNIccxjZlH4QH7ag4ojWOI.jpg" },
-  { "id": 7, "title": "Goodfellas", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg" },
-  { "id": 8, "title": "9 Reinas", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/v8l85vxFe9J1uEvK9qyIMBlYJNv.jpg" },
-  { "id": 9, "title": "The Shawshank Redemption", "image": "https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg" },
-  { "id": 10, "title": "Rear Window", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/g3Yvww6KcqizgqMUHL4QJWTB6Jx.jpg" },
-  { "id": 11, "title": "Urusei Yatsura: Beautiful Dreamer", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/m7CFGcwc5HLbHkSlK3JBkayFBGV.jpg" },
-  { "id": 12, "title": "Casino", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/gziIkUSnYuj9ChCi8qOu2ZunpSC.jpg" },
-  { "id": 13, "title": "North by Northwest", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/ay0dOKJgyK4VEh3xakV15UgvJMF.jpg" },
-  { "id": 19, "title": "Spider-Man 2", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/aGuvNAaaZuWXYQQ6N2v7DeuP6mB.jpg" },
-  { "id": 14, "title": "Raging Bull", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/rn3Cj1HK57xh2LLmmFEOS1k4c27.jpg" },
-  { "id": 15, "title": "The Godfather Part II", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg" },
-  { "id": 16, "title": "The Ideon: Be Invoked", "image": "https://cdn.myanimelist.net/images/anime/1846/123627l.jpg" },
-  { "id": 17, "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/6x7MzQ6BOMlRzam1StcmPO9v61g.jpg" },
-  { "id": 18, "title": "Spider-Man", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg" },
-  { "id": 20, "title": "Sonic the Hedgehog 3", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/mubt4bnVfpJ5lBMq93DidEuMkJr.jpg" }
-]
+{
+  "all" : [
+    { "id": 1, "title": "The King of Comedy", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/3BM78deUfeZfShqPTblZuamgC8a.jpg" },
+    { "id": 2, "title": "The Godfather", "image": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" },
+    { "id": 3, "title": "Lupin III: Cagliostro no Shiro", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/mGfd4QCC1RCFdET5MihyW4Rfp1B.jpg" },
+    { "id": 4, "title": "Psycho", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/xFbnc2QPG5H5gYWsGbZT4q8Akya.jpg" },
+    { "id": 5, "title": "Rocky", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/8kEun6U9hTddM7NEfLLCGQKU2Mp.jpg" },
+    { "id": 6, "title": "The End of Evangelion", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/yBanOpNIccxjZlH4QH7ag4ojWOI.jpg" },
+    { "id": 7, "title": "Goodfellas", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg" },
+    { "id": 8, "title": "9 Reinas", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/v8l85vxFe9J1uEvK9qyIMBlYJNv.jpg" },
+    { "id": 9, "title": "The Shawshank Redemption", "image": "https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg" },
+    { "id": 10, "title": "Rear Window", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/g3Yvww6KcqizgqMUHL4QJWTB6Jx.jpg" },
+    { "id": 11, "title": "Urusei Yatsura: Beautiful Dreamer", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/m7CFGcwc5HLbHkSlK3JBkayFBGV.jpg" },
+    { "id": 12, "title": "Casino", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/gziIkUSnYuj9ChCi8qOu2ZunpSC.jpg" },
+    { "id": 13, "title": "North by Northwest", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/ay0dOKJgyK4VEh3xakV15UgvJMF.jpg" },
+    { "id": 19, "title": "Spider-Man 2", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/aGuvNAaaZuWXYQQ6N2v7DeuP6mB.jpg" },
+    { "id": 14, "title": "Raging Bull", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/rn3Cj1HK57xh2LLmmFEOS1k4c27.jpg" },
+    { "id": 15, "title": "The Godfather Part II", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg" },
+    { "id": 16, "title": "The Ideon: Be Invoked", "image": "https://cdn.myanimelist.net/images/anime/1846/123627l.jpg" },
+    { "id": 17, "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/6x7MzQ6BOMlRzam1StcmPO9v61g.jpg" },
+    { "id": 18, "title": "Spider-Man", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg" },
+    { "id": 20, "title": "Sonic the Hedgehog 3", "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/mubt4bnVfpJ5lBMq93DidEuMkJr.jpg" }
+  ],
+  
+  "categories": {
+    "recent": [1, 5, 11, 2, 18],
+    "interested": [3, 16, 6, 8, 12, 14, 19],
+    "moviesPopular": [9, 4, 10, 15, 13, 20, 7, 12]
+  }
+}
