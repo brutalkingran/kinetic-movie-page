@@ -4,7 +4,6 @@ import { AiOutlineDelete } from "react-icons/ai";
 const WatchlistModal = ({ onClose }) => {
   const [watchlist, setWatchlist] = useState([]);
 
-  // Cargar la watchlist del localStorage al montar
   useEffect(() => {
     const storedList = JSON.parse(localStorage.getItem("watchlist")) || [];
     setWatchlist(storedList);
@@ -17,17 +16,37 @@ const WatchlistModal = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-4 rounded-lg max-w-md w-full">
-        <h2 className="text-lg font-semibold mb-4">Watchlist</h2>
+    <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50">
+      {/* Contenedor del modal */}
+      <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto p-4 shadow-xl">
+        <h2 className="text-lg font-semibold mb-4 text-palette-300">Watchlist</h2>
 
         {watchlist.length > 0 ? (
           <ul className="space-y-2">
             {watchlist.map((movie) => (
-              <li key={movie.id} className="flex justify-between items-center border-b pb-2">
-                <p className="text-gray-800 truncate max-w-[200px]">{movie.title}</p>
-                <button onClick={() => removeFromWatchList(movie.id)} className="text-red-500 hover:text-red-700">
-                  <AiOutlineDelete size={20} />
+              <li
+                key={movie.id}
+                className="flex items-center justify-between gap-2 border-b pb-2"
+              >
+                {/* Miniatura */}
+                <img
+                  src={movie.image}
+                  alt={movie.title}
+                  className="w-12 h-16 object-cover rounded"
+                />
+
+                {/* Título */}
+                <p className="text-gray-800 flex-1 text-center truncate px-2">
+                  {movie.title}
+                </p>
+
+                {/* Botón de eliminar */}
+                <button
+                  onClick={() => removeFromWatchList(movie.id)}
+                  className="text-red-500 hover:text-red-700"
+                  title="Eliminar"
+                >
+                  <AiOutlineDelete size={22} />
                 </button>
               </li>
             ))}
@@ -36,7 +55,10 @@ const WatchlistModal = ({ onClose }) => {
           <p className="text-gray-500">No hay nada en tu watchlist.</p>
         )}
 
-        <button onClick={onClose} className="mt-4 bg-palette-200 text-white py-1 px-3 rounded">
+        <button
+          onClick={onClose}
+          className="mt-4 bg-palette-200 text-white py-1 px-3 rounded hover:bg-palette-300 transition"
+        >
           Cerrar
         </button>
       </div>

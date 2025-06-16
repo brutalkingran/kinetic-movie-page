@@ -29,8 +29,8 @@ const MovieList = ({ order }) => {
     .filter(Boolean);
 
   return (
-    <div className="w-full overflow-x-auto flex flex-row">
-      <div className="flex flex-nowrap gap-4 px-4">
+    <div className="w-full overflow-x-auto">
+      <div className="mx-auto max-w-6xl flex flex-nowrap gap-4 px-4">
         {selectedMovies.map((movie) => (
           <MovieCard
             key={movie.id}

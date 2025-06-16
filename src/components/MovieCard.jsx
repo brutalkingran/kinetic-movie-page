@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import {
-  AiTwotonePlayCircle,
-  AiTwotonePlusCircle,
+  AiOutlinePlayCircle,
+  AiOutlinePlusCircle,
   AiOutlineMinusCircle,
   AiOutlineMore,
 } from "react-icons/ai";
@@ -58,7 +58,7 @@ const MovieCard = ({ movieData, isInWatchlist, onToggleWatchlist }) => {
   }, []);
 
   return (
-    <div className="w-[175px] rounded-xl flex flex-col items-center bg-palette-400 shadow-md cursor-pointer relative p-2">
+    <div className="group w-[175px] rounded-xl flex flex-col items-center bg-palette-400 shadow-md cursor-pointer relative p-2">
       <div>
         <img
           className="w-full h-full object-cover rounded-t-xl"
@@ -80,13 +80,15 @@ const MovieCard = ({ movieData, isInWatchlist, onToggleWatchlist }) => {
         </button>
       </div>
 
-      <div className="md:opacity-0 md:hover:opacity-75 md:hover:flex z-5 text-white flex flex-col justify-center items-center">
-        <button className="hidden md:flex cursor-pointer">
-          <AiTwotonePlayCircle size={32} />
+      <div className="hidden md:flex opacity-0 group-hover:opacity-100 absolute inset-0 z-10 flex-col justify-center items-center gap-2 transition-opacity duration-300">
+        <button className="cursor-pointer transform transition-transform duration-200 hover:scale-110 hover:text-palette-100">
+          <AiOutlinePlayCircle size={40} className="md:w-12 md:h-12" />
         </button>
 
-        <button className="hidden md:flex cursor-pointer" onClick={handleButtonClick}>
-          {isInWatchlist ? <AiOutlineMinusCircle size={32} /> : <AiTwotonePlusCircle size={32} />}
+        <button className="cursor-pointer transform transition-transform duration-200 hover:scale-110 hover:text-green-400" onClick={handleButtonClick}>
+          {isInWatchlist
+          ? <AiOutlineMinusCircle size={40} className="md:w-12 md:h-12" />
+          : <AiOutlinePlusCircle size={40} className="md:w-12 md:h-12" /> }
         </button>
       </div>
 
