@@ -1,8 +1,27 @@
+import { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 import SearchBar from "./SearchBar";
 import Logo from "../assets/logo.svg"
 
 const Main = () => {
+  const [watchlist, setWatchlist] = useState([]);
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
+    setWatchlist(saved);
+  }, []);
+
+  const toggleWatchlist = (movie) => {
+    setWatchlist((prev) => {
+      const isInList = prev.some((m) => m.id === movie.id);
+      const updated = isInList
+        ? prev.filter((m) => m.id !== movie.id)
+        : [...prev, movie];
+      localStorage.setItem("watchlist", JSON.stringify(updated));
+      return updated;
+    });
+  };
+
   return (
     <>
       <main className="flex flex-col bg-palette-400 text-white">
@@ -30,22 +49,19 @@ const Main = () => {
             <h1 className="text-3xl ml-[100px]">Vistos recientemente</h1>
             <a href="#" className="hover:underline mr-10">Ver más</a>
           </div>
-
-          <MovieList order="recent"/>
+          <MovieList order="recent" watchlist={watchlist} toggleWatchlist={toggleWatchlist} />
 
           <div className="flex flex-row m-5 justify-between items-center">
             <h1 className="text-3xl ml-[100px]">Podrían interesarte</h1>
             <a href="#" className="hover:underline mr-10">Ver más</a>
           </div>
-
-          <MovieList order="interested"/>
+          <MovieList order="interested" watchlist={watchlist} toggleWatchlist={toggleWatchlist} />
 
           <div className="flex flex-row m-5 justify-between items-center">
             <h1 className="text-3xl ml-[100px]">Películas - Popular </h1>
             <a href="#" className="hover:underline mr-10">Ver más</a>
           </div>
-
-          <MovieList order="moviesPopular"/>
+          <MovieList order="moviesPopular" watchlist={watchlist} toggleWatchlist={toggleWatchlist} />
         </div>
       </main>
     </>

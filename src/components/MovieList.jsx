@@ -1,28 +1,9 @@
-import { useEffect, useState } from "react";
 import movies from "../api/movies.json";
 import MovieCard from "./MovieCard.jsx";
 
-const MovieList = ({ order }) => {
+const MovieList = ({ order, watchlist, toggleWatchlist }) => {
   const allMovies = movies.all;
   const groupIds = movies.categories[order] || [];
-  const [watchlist, setWatchlist] = useState([]);
-
-  useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem("watchlist")) || [];
-    setWatchlist(saved);
-  }, []);
-
-  const toggleWatchlist = (movie) => {
-    setWatchlist((prev) => {
-      const isInList = prev.some((m) => m.id === movie.id);
-      const updated = isInList
-        ? prev.filter((m) => m.id !== movie.id)
-        : [...prev, movie];
-
-      localStorage.setItem("watchlist", JSON.stringify(updated));
-      return updated;
-    });
-  };
 
   const selectedMovies = groupIds
     .map((id) => allMovies.find((movie) => movie.id === id))
