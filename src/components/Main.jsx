@@ -12,18 +12,18 @@ const Main = () => {
   }, []); // solo se ejecuta cuando componente entra al DOM
 
   // Agrega/quita películas de acuerdo a si ya está en la lista
-  const toggleWatchlist = ( movie ) => {
-    setWatchlist((prev) => {
-      const isInList = prev.some((m) => m.id === movie.id);
-      const updated = isInList
-        ? prev.filter((m) => m.id !== movie.id) // si está, quita
-        : [...prev, movie]; // si no está, añade
-
-      localStorage.setItem("watchlist", JSON.stringify( updated ));
-
-      return updated;
-    });
+  const toggleWatchlist = (movie) => {
+    const current = JSON.parse(localStorage.getItem("watchlist")) || [];
+  
+    const isInList = current.some((m) => m.id === movie.id);
+    const updated = isInList
+      ? current.filter((m) => m.id !== movie.id)
+      : [...current, movie];
+  
+    localStorage.setItem("watchlist", JSON.stringify(updated));
+    setWatchlist(updated); // actualizar estado local también
   };
+  
 
   return (
     <>

@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef  } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 
 const WatchlistModal = ({ onClose }) => {
   const [watchlist, setWatchlist] = useState([]);
+  const isFirstRun = useRef(true); // <- Aquí controlamos la primera ejecución
 
   // UseEffect cumple misma función que el que se encuentra en Main.jsx
   useEffect(() => {
@@ -11,14 +12,24 @@ const WatchlistModal = ({ onClose }) => {
     setWatchlist(storedList);
   }, []);
 
+  useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      return; // No escribas en localStorage la primera vez
+    }
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+  }, [watchlist]);
+  
   const removeFromWatchList = ( id ) => {
     const updatedList = watchlist.filter((movie) => movie.id !== id);
 
     // Actualizamos watchlist con elemento borrado
     setWatchlist(updatedList);
-    // Actualizamos localstorage
-    localStorage.setItem("watchlist", JSON.stringify(updatedList));
   };
+
+  const removeAll = () => {
+    setWatchlist([]);
+  }
 
   return (
     <div className="pt-15 fixed inset-0 bg-black/80 flex justify-center items-center z-50">
@@ -64,6 +75,10 @@ const WatchlistModal = ({ onClose }) => {
                 </button>
               </li>
             ))}
+
+            <button className="bg-red-600 w-full p-2 rounded text-white justify-center items-center" onClick={ removeAll }>
+              BORRAR TODOS
+            </button>
           </ul>
         ) : (
           <p className="text-gray-500">No hay nada en tu watchlist.</p>
