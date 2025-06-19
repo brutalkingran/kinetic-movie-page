@@ -11,16 +11,6 @@ const Header = () => {
       {/* MOBILE MENU */}
       <header className="fixed bottom-0 left-0 right-0 bg-palette-300 py-1 opacity-100 border-palette-300 inset-shadow-sm z-50 md:hidden">
         <nav className="flex justify-around w-full">
-          <div className="hidden md:flex">
-            {/* LOGO */}
-            {/* TODO: AÑADIR LOGO */}
-
-            {/* MENU HAMBURGUESA */}
-            <button className="hidden md:flex" onClick={() => setOpenMenu( !openMenu )}>
-              <AiOutlineMenu size={25}/>
-            </button>
-          </div>
-
           {/* BOTON INICIO */}
           <button className="text-palette-200 text-sm flex flex-col items-center">
             <AiOutlineHome size={25}/>
@@ -43,14 +33,6 @@ const Header = () => {
 
       {/* DESKTOP MENU */}
       <aside className="hidden md:flex fixed top-0 left-0 h-full w-[80px] bg-palette-100 flex-col items-center py-4 z-50 border-palette-200 justify-around">
-        {/* Menu Toggle (Optional) */}
-        <button
-          className="text-palette-200 mb-4"
-          onClick={() => setOpenMenu(!openMenu)}
-        >
-          <AiOutlineMenu size={28} />
-        </button>
-
         {/* Home */}
         <button title="Home" className="p-5 text-palette-200 flex flex-col items-center mb-6 hover:cursor-pointer">
           <AiOutlineHome size={28} />
