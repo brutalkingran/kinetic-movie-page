@@ -16,3 +16,6 @@ Desarrollar una aplicación en React + Vite donde los usuarios puedan visualizar
    - Cada película en la watchlist debe tener un botón para removerla.
 4. Persistencia de datos
    - Usar useEffect para cargar la watchlist desde Local Storage cuando se monta el componente principal.
+
+# Despliegue
+[https://kinematic-movies.netlify.app/](https://kinematic-movies.netlify.app/)
